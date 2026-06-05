@@ -3,6 +3,12 @@
 return [
 
     [
+        'GET',
+        '/api/health',
+        'health'
+    ],
+
+    [
         'POST',
         '/api/shorten',
         'shorten'

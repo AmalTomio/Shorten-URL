@@ -114,6 +114,9 @@ switch ($routeInfo[0]) {
                 $controller->redirect(
                     $vars['code']
                 );
+
+                case 'health':
+                $controller->health();
                 break;
         }
 

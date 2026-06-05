@@ -75,4 +75,12 @@ class UrlController
 
         exit;
     }
+
+    public function health(): void
+{
+    Response::json([
+        'success' => true,
+        'message' => 'API is running'
+    ]);
+}
 }
