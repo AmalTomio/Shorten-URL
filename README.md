@@ -1,77 +1,78 @@
-Setup Instructions
-1. Clone Repository
+# Short URL Generator
+
+## Setup
+
+### 1. Clone Repository
+
+```bash
 git clone <repository-url>
 cd short-url-generator
-2. Create Database
+```
 
-Create a MySQL database named:
+---
 
-shortener
+### 2. Database Setup
 
-Import the database schema:
+Create a MySQL database:
 
+```sql
+CREATE DATABASE shortener;
+```
+
+Import:
+
+```text
 database/schema.sql
-3. Run Backend
+```
 
-Navigate to the backend directory:
+---
 
+### 3. Backend Setup
+
+```bash
 cd backend
 
-Install Composer dependencies:
-
 composer install
+```
 
-Create a .env file from .env.example.
+Create a `.env` file from `.env.example`.
 
-Start the PHP development server:
+Start the backend:
 
+```bash
 php -S 127.0.0.1:9000 -t public
+```
 
 Backend URL:
 
+```text
 http://127.0.0.1:9000
-4. Run Frontend
+```
 
-Navigate to the frontend directory:
+---
 
+### 4. Frontend Setup
+
+```bash
 cd frontend
-
-Install dependencies:
 
 npm install
 
-Start the development server:
-
 npm run dev
+```
 
 Frontend URL:
 
+```text
 http://localhost:3000
-API Endpoints
-Create Short URL
-POST /api/shorten
+```
 
-Request Body:
+---
 
-{
-  "url": "https://www.google.com"
-}
-Redirect
-GET /{shortCode}
+## Test
 
-Example:
-
-http://127.0.0.1:9000/JXie23
-
-The endpoint redirects to the original URL.
-
-Testing
-Open the frontend application.
-Enter a valid URL.
-Click Shorten URL.
-Verify that a short URL is generated.
-Click Test Redirect.
-Verify that the browser redirects to the original URL.
-Author
-
-Amal Othman
+1. Open `http://localhost:3000`
+2. Enter a valid URL
+3. Click **Shorten URL**
+4. Open the generated short URL
+5. Verify it redirects to the original URL
