@@ -1,19 +1,64 @@
 # Short URL Generator
 
-## Setup
+A web application that converts long URLs into short URLs and redirects users to the original URL.
 
-### 1. Clone Repository
+## Docker Setup (Backend + Database)
+
+### Requirements
+
+* Docker Desktop
+
+### Start Services
 
 ```bash
-git clone <repository-url>
-cd short-url-generator
+docker compose up --build
+```
+
+Backend API:
+
+```text
+http://localhost:9000
 ```
 
 ---
 
-### 2. Database Setup
+## Frontend Setup
 
-Create a MySQL database:
+### Requirements
+
+* Node.js
+
+### Install Dependencies
+
+```bash
+cd frontend
+
+npm install
+```
+
+### Start Frontend
+
+```bash
+npm run dev
+```
+
+Frontend:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Manual Backend Setup (Without Docker)
+
+### Requirements
+
+* PHP 8+
+* Composer
+* MySQL
+
+### Create Database
 
 ```sql
 CREATE DATABASE shortener;
@@ -25,9 +70,7 @@ Import:
 database/schema.sql
 ```
 
----
-
-### 3. Backend Setup
+### Install Dependencies
 
 ```bash
 cd backend
@@ -37,13 +80,13 @@ composer install
 
 Create a `.env` file from `.env.example`.
 
-Start the backend:
+### Start Backend
 
 ```bash
 php -S 127.0.0.1:9000 -t public
 ```
 
-Backend URL:
+Backend:
 
 ```text
 http://127.0.0.1:9000
@@ -51,25 +94,7 @@ http://127.0.0.1:9000
 
 ---
 
-### 4. Frontend Setup
-
-```bash
-cd frontend
-
-npm install
-
-npm run dev
-```
-
-Frontend URL:
-
-```text
-http://localhost:3000
-```
-
----
-
-## Test
+## Testing
 
 1. Open `http://localhost:3000`
 2. Enter a valid URL
