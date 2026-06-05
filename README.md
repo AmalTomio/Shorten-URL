@@ -27,6 +27,7 @@ php -S 127.0.0.1:9000 -t public
 Backend URL:
 
 http://127.0.0.1:9000
+
 3. Frontend Setup
 
 Navigate to the frontend folder:
